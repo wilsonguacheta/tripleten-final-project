@@ -1,0 +1,45 @@
+# Entorno reproducible del Proyecto Final de Analítica de Datos.
+#
+# Recrear desde cero:
+#   conda env create -f environment.yml
+#   conda run -n dataanalyst-final python -m ipykernel install --user \
+#       --name dataanalyst-final --display-name "Python (dataanalyst-final)"
+#
+# Las librerías que afectan resultados numéricos van con versión exacta para
+# garantizar que las cifras de los notebooks sean reproducibles; las de
+# presentación quedan flexibles para que el entorno siga siendo instalable.
+name: dataanalyst-final
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.13
+
+  # Núcleo analítico: versión fija (afecta resultados numéricos)
+  - pandas=2.3.3
+  - numpy=2.3.5
+  - scipy=1.16.3
+  - statsmodels=0.14.5
+
+  # Acceso a la base de datos del caso SQL
+  - sqlalchemy=2.0.43
+  - psycopg2
+  - python-dotenv
+
+  # Visualización
+  - matplotlib
+  - seaborn
+  - plotly
+
+  # Entorno de trabajo y exportación de entregables
+  - jupyterlab
+  - ipykernel
+  - nbconvert
+  - openpyxl
+
+  # Generación de las presentaciones (build_presentaciones.py).
+  # No hacen falta para ejecutar los notebooks.
+  - python-pptx
+  - pillow
+  - pywin32   # solo Windows: conversión de .pptx a .pdf mediante PowerPoint

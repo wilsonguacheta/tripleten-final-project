@@ -1,0 +1,25 @@
+# Credenciales
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Datos regenerables (se reconstruyen al re-ejecutar los notebooks)
+data/interim/
+data/processed/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Instrucciones AI
+CLAUDE.md
